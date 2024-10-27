@@ -10,19 +10,19 @@ export function Assignments({
   assignments: { title: string; completed: boolean }[];
   onDeleteAssignment: (index: number) => void;
   onCompleteAssignment: (index: number) => void;
-  completedCount: number; // New prop for the number of completed assignments
+  completedCount: number;
 }) {
   return (
     <section className={styles.assignments}>
       <header className={styles.header}>
         <div>
           <p>Created Assignments</p>
-          <span>{assignments.length}</span> {/* Show count of assignments */}
+          <span>{assignments.length}</span>
         </div>
 
         <div>
           <p className={styles.textPurple}>Completed Assignments</p>
-          <span>{completedCount} of {assignments.length}</span> {/* Show completed count */}
+          <span>{completedCount} of {assignments.length}</span>
         </div>
       </header>
 
@@ -32,8 +32,8 @@ export function Assignments({
             key={index}
             title={assignment.title}
             completed={assignment.completed}
-            onDelete={() => onDeleteAssignment(index)} // Pass delete handler to Assignment
-            onComplete={() => onCompleteAssignment(index)} // Pass complete handler to Assignment
+            onDelete={() => onDeleteAssignment(index)}
+            onComplete={() => onCompleteAssignment(index)}
           />
         ))}
       </div>
